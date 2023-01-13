@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.floating-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    background-color: rgb(48, 37, 255);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    z-index: 1;
+}
+
+.navbar-text {
+    font-size: 35px;
+    font-family: 'Fredoka One';
+}
+
+.navbar-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+}
+
+.navbar-buttons button {
+    background-color: #fff;
+    width: 55px;
+    height: 55px;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 0px;
+    margin-left: 25px;
+    cursor: pointer;
+    border-radius: 80%;
+}
+
