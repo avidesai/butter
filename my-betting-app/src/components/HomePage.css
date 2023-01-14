@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+  }
+  
+  .betting-grid {
+    margin-top: 150px; /* height of navbar */
+    margin: 140px 40px 20px 40px;
+  }
+  
+  .betting-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    grid-gap: 15px;
+  }
+  
+  .tile {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .tile h3 {
+    margin-top: 0;
+  }
+  
+  .tile button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .tile button:hover {
+    background-color: #cb29a5;
+  }

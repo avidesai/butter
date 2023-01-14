@@ -1,22 +1,34 @@
 import React from 'react';
 import './Navbar.css';
 
-function Navbar({setIsUserPage, setIsHomePage}) {
+function Navbar({setIsBetsPage, setIsWalletPage, setIsUserPage, setIsHomePage}) {
 
-  const handleClick = () => {
+  const handleBets = () => {
+    setIsBetsPage(true);
+  }
+  const handleWallet = () => {
+    setIsWalletPage(true);
+  }
+  const handleUser = () => {
     setIsUserPage(true);
+  }
+  const handleHomeClick = () => {
+    setIsHomePage(true);
+    setIsBetsPage(false);
+    setIsWalletPage(false);
+    setIsUserPage(false);
   }
 
   return (
     <nav className="floating-navbar">
         <div className="navbar-left">
-          <p>butter.</p>
+          <button onClick={handleHomeClick}>butter.</button>
         </div>
         <div className="navbar-right">
             <div className="navbar-buttons">
-              <button>&#128235;</button>
-              <button>&#128176;</button>
-              <button onClick={handleClick}>&#129337;</button>
+              <button onClick={handleBets}>&#128640;</button>
+              <button onClick={handleWallet}>&#128176;</button>
+              <button onClick={handleUser}>&#128100;</button>
             </div>
         </div>
     </nav>

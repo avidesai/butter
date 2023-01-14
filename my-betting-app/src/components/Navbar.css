@@ -13,11 +13,17 @@
     align-items: center;
     padding: 0 30px;
     z-index: 1;
+    box-shadow: 2px 2px 5px rgb(137, 120, 196);
 }
 
-.navbar-left p {
-    font-size: 35px;
+.navbar-left button {
+    font-size: 40px;
     font-family: 'Fredoka One';
+    cursor: pointer;
+    border: 0pt;
+    background-color: transparent;
+    color: white;
+    box-shadow: 2px 2px 8px rgb(255, 255, 51);
 }
 
 .navbar-buttons {
@@ -37,5 +43,6 @@
     margin-left: 25px;
     cursor: pointer;
     border-radius: 80%;
+    box-shadow: 2px 2px 8px rgb(38, 19, 252);
 }
 

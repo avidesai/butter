@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.table-wrapper {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+  .my-bets-container {
+    padding-top: 120px;
+  }
+
+.active-bets-container, .past-bets-container {
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px #ccc;
+    padding: 20px;
+    padding-bottom: 30px;
+    margin: 20px;
+    width: 50%;
+    background-color: rgba(174, 174, 174, 0.18);
+    color:black;
+    max-width: 350px;
+    font-size: 14px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 16px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid rgba(77, 77, 77, 0.242);
+    padding: 10px;
+    text-align: left;
+    font-family: 'Rubik', sans-serif;
+}

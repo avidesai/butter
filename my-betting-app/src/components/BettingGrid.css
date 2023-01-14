@@ -23,6 +23,8 @@
   
   .tile {
     display: grid;
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px #999;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-template-areas: 
@@ -37,10 +39,11 @@
   
   .tile h4 {
     grid-area: price;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: 15px;
-    font-size: 24px;
+    font-size: 28px;
     color:#0ba522;
+    text-shadow: 1px 1px 1px rgb(254, 232, 64);
     font-family: 'Rubik', sans-serif;
   }
   
@@ -50,11 +53,12 @@
     max-width: 220px;
     max-height: 75x;
     font-size: 18px;
-    background-color: rgb(37, 142, 255);
+    background-color: rgb(48, 37, 255);
     color: white;
     border: none;
     cursor: pointer;
     margin-top: 10px;
+    border-radius: 15px;
   }
   
   .tile button:hover {
