@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
 import './BettingGrid.css';
+import BetModal from './BetModal';
 import Clock from '../images/clock.png';
 
 
@@ -20,7 +21,7 @@ const BettingGrid = () => {
         <div className="tile-timer">
           <img src={Clock} alt=""/>
           <p className="timer">{timeLeft} left</p>
-        </div> 
+        </div>
         <h3>Emmy's 2023 Winner</h3>
         <div className="tile-footer">
           <h4>$22,342</h4>
