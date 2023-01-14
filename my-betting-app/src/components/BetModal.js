@@ -1,21 +1,26 @@
 import React from 'react';
+import './BetModal.css';
 
-const BetModal = ({isOpen, closeModal, handleBetAmount}) => {
-  if (!isOpen) {
-    return null;
-  }
-
+const BetModal = ({ isOpen, closeModal, handleBetAmount }) => {
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <h3>Enter Bet Amount</h3>
-        <form>
-          <input type="number" placeholder="Enter amount" onChange={handleBetAmount}/>
-        </form>
-        <button onClick={closeModal}>Submit</button>
-        <button onClick={closeModal}>Cancel</button>
-      </div>
-    </div>
+    <>
+      {isOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <button onClick={closeModal} className="modal-close-button">
+              X
+            </button>
+            <form onSubmit={handleBetAmount}>
+              <label>
+                Enter bet amount:
+                <input type="number" name="betAmount" min="1" required />
+              </label>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
