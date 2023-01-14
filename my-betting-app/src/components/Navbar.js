@@ -1,18 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = () => {
+function Navbar({setIsUserPage, setIsHomePage}) {
+
+  const handleClick = () => {
+    setIsUserPage(true);
+  }
+
   return (
     <nav className="floating-navbar">
         <div className="navbar-left">
-            <div className="navbar-text">butter.</div>
+          <p>butter.</p>
         </div>
         <div className="navbar-right">
             <div className="navbar-buttons">
-                <button>&#128235;</button>
-                <button>&#128176;</button>
-                <button>&#129337;</button>
+              <button>&#128235;</button>
+              <button>&#128176;</button>
+              <button onClick={handleClick}>&#129337;</button>
             </div>
         </div>
     </nav>

@@ -15,7 +15,7 @@
     z-index: 1;
 }
 
-.navbar-text {
+.navbar-left p {
     font-size: 35px;
     font-family: 'Fredoka One';
 }
@@ -26,7 +26,7 @@
     margin-right: 80px;
 }
 
-.navbar-buttons button {
+.navbar-right button {
     background-color: #fff;
     width: 55px;
     height: 55px;

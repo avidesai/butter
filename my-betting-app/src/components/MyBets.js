@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from './Navbar';
 
-function UserPage() {
+function MyBets() {
   return (
-    <div className="user-page">
+    <div className="my-bets">
       <Navbar />
       Yolo.
     </div>
   );
 }
 
-export default UserPage;
+export default MyBets;
