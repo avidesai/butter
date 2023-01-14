@@ -23,7 +23,7 @@
     border: 0pt;
     background-color: transparent;
     color: white;
-    box-shadow: 2px 2px 8px rgb(255, 255, 51);
+    text-shadow: 10px;
 }
 
 .navbar-buttons {

@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .betting-grid {
       grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .betting-grid {
       grid-template-columns: repeat(2, 1fr);
   }
@@ -17,8 +17,8 @@
 .betting-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 200px);
-    grid-gap: 30px;
+    grid-template-rows: repeat(2, 240px);
+    grid-gap: 40px;
   }
   
   .tile {
@@ -29,27 +29,81 @@
     grid-template-rows: repeat(1, 1fr);
     grid-template-areas: 
       "title title title"
-      "price blank button";
+      "price blank button"
+      "footer footer footer";
   }
-  .tile h3 {
-    grid-area: title;
-    font-size: 22px;
-    font-family: 'Noto Sans', sans-serif;
+
+  .tile-timer {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-top: -6px;
+    padding: 5px;
+    box-shadow: 2px 2px 8px #999;
+    border-radius: 5px;  
+    background-color: white;
+  }
+  .tile-timer img{
+    width: 25px;
+    height: 25px;
   }
   
-  .tile h4 {
-    grid-area: price;
+  .tile-timer p {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 14px;
     margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .tile h3 {
+    margin-top: 50px;
+    grid-area: title;
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  /* .tile-footer {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: absolute;
+  } */
+  .tile-footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    }
+  
+  /* .tile h4 {
+    grid-area: price;
+    position:absolute;
+    margin-top: 20px;
     margin-left: 15px;
     font-size: 28px;
     color:#0ba522;
     text-shadow: 1px 1px 1px rgb(254, 232, 64);
     font-family: 'Rubik', sans-serif;
-  }
+  } */
+
+  .tile h4 {
+    grid-area: price;
+    margin: 0;
+    padding: 0 10px;
+    font-size: 24px;
+    color: #0ba522;
+    text-shadow: 1px 1px 1px rgb(254, 232, 64);
+    font-family: 'Rubik', sans-serif;
+    }
   
-  .tile button {
+  /* .tile button {
     font-family: 'Rubik', sans-serif;
     grid-area: button;
+    position:absolute;
     max-width: 220px;
     max-height: 75x;
     font-size: 18px;
@@ -57,9 +111,23 @@
     color: white;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
     border-radius: 15px;
-  }
+  } */
+
+  .tile button {
+    grid-area: button;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    background-color: rgb(48, 37, 255);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    align-self: center;
+    }
   
   .tile button:hover {
     background-color: #b730fa;
