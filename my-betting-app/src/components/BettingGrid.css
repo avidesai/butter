@@ -2,23 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-@media (min-width: 900px) {
-  .betting-grid {
-      grid-template-columns: repeat(3, 1fr);
-  }
-}
 
-@media (max-width: 700px) {
-  .betting-grid {
-      grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 .betting-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 240px);
-    grid-gap: 40px;
+    grid-template-rows: repeat(2, 260px);
+    grid-gap: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .tile {
+      font-size: 14px;
+      padding: 10px;
+      margin: 5px;
+    }
   }
   
   .tile {
@@ -55,6 +53,7 @@
     margin-top: 0px;
     margin-bottom: 0px;
   }
+  
 
   .tile h3 {
     margin-top: 50px;
@@ -62,14 +61,7 @@
     font-size: 20px;
     font-family: 'Noto Sans', sans-serif;
   }
-  /* .tile-footer {
-    width: 100%;
-    height: 50px;
-    background-color: white;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    position: absolute;
-  } */
+
   .tile-footer {
     grid-area: footer;
     display: flex;
@@ -78,49 +70,24 @@
     background-color: white;
     border-radius: 15px 15px 15px 15px;
     }
-  
-  /* .tile h4 {
-    grid-area: price;
-    position:absolute;
-    margin-top: 20px;
-    margin-left: 15px;
-    font-size: 28px;
-    color:#0ba522;
-    text-shadow: 1px 1px 1px rgb(254, 232, 64);
-    font-family: 'Rubik', sans-serif;
-  } */
 
   .tile h4 {
     grid-area: price;
     margin: 0;
     padding: 0 10px;
-    font-size: 24px;
+    font-size: 20px;
     color: #0ba522;
     text-shadow: 1px 1px 1px rgb(254, 232, 64);
     font-family: 'Rubik', sans-serif;
     }
   
-  /* .tile button {
-    font-family: 'Rubik', sans-serif;
-    grid-area: button;
-    position:absolute;
-    max-width: 220px;
-    max-height: 75x;
-    font-size: 18px;
-    background-color: rgb(48, 37, 255);
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 15px;
-  } */
-
   .tile button {
     grid-area: button;
     padding: 10px;
     margin-bottom: 10px;
-    margin-right: 10px;
+    margin-right: 5px;
     font-family: 'Rubik', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     background-color: rgb(48, 37, 255);
     color: white;
     border: none;

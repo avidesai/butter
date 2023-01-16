@@ -80,18 +80,29 @@
     height: 40px;
   }
 
-    .modal-content button[type="submit"] {
-      grid-area: submit;
-      padding: 10px;
-      margin-bottom: 10px;
-      margin-right: 10px;
-      margin-left: 15px;
-      font-family: 'Rubik', sans-serif;
-      font-size: 20px;
-      background-color: rgb(48, 37, 255);
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 15px;
-      align-self: end;
-    }
+  .bet-amount-input {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #333;
+    width: 55%;
+}
+
+
+  .modal-content button[type="submit"] {
+    grid-area: submit;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    margin-left: 15px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    background-color: rgb(48, 37, 255);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    align-self: end;
+  }
