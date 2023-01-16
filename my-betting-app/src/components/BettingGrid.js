@@ -12,12 +12,14 @@ const BettingGrid = () => {
   const [timeLeft, setTimeLeft] = useState(moment().startOf('day').seconds(9000).format('H:mm'));
 
     const handleBetAmount = (e) => {
-    // code to handle bet amount
+      e.preventDefault();
+      const {title, price} = modalData;
+      // code to handle bet amount with title and price
     }
     
-    const openModal = (data) => {
-    setModalOpen(true);
-    setModalData(data);
+    const openModal = (title, price) => {
+      setModalOpen(true);
+      setModalData({ title, price });
     }
     
     const closeModal = () => {
@@ -48,7 +50,7 @@ const BettingGrid = () => {
         <h3>Emmy's 2023 Winner</h3>
         <div className="tile-footer">
           <h4>$22,342</h4>
-          <button onClick={openModal}>Place Bet</button>
+          <button onClick={() => openModal("Emmy's 2023 Winner", "$22,342")}>Place Bet</button>
         </div>
       </div>
       <div className="tile">
@@ -59,7 +61,7 @@ const BettingGrid = () => {
         <h3>Best Album to Blast on a Saturday Night</h3>
         <div className="tile-footer">
           <h4>$9,527</h4>
-          <button onClick={openModal}>Place Bet</button>
+          <button onClick={() => openModal("Best Album to Blast on a Saturday Night", "$9,527")}>Place Bet</button>
         </div>
       </div>
       <div className="tile">
@@ -70,7 +72,7 @@ const BettingGrid = () => {
         <h3>Most Emotional End of an Era</h3>
         <div className="tile-footer">
           <h4>$127,833</h4>
-          <button onClick={openModal}>Place Bet</button>
+          <button onClick={() => openModal("Most Emotional End of an Era", "$127,833")}>Place Bet</button>
         </div>
       </div>
       <div className="tile">
@@ -81,7 +83,7 @@ const BettingGrid = () => {
         <h3>⚠️ It’s time to be honest ⚠️</h3>
         <div className="tile-footer">
           <h4>$2,391</h4>
-          <button onClick={openModal}>Place Bet</button>
+          <button onClick={() => openModal("⚠️ It’s time to be honest ⚠️", "$2,391")}>Place Bet</button>
         </div>
       </div>
       <div className="tile">
@@ -92,7 +94,7 @@ const BettingGrid = () => {
         <h3>Can we trust the golden globes again?</h3>
         <div className="tile-footer">
           <h4>$19,935</h4>
-          <button onClick={openModal}>Place Bet</button>
+          <button onClick={() => openModal("Can we trust the golden globes again?", "$19,935")}>Place Bet</button>
         </div>
       </div>
       <div className="tile">
@@ -103,7 +105,7 @@ const BettingGrid = () => {
         <h3>Golden Globes Winner</h3>
         <div className="tile-footer">
           <h4>$12,184</h4>
-          <button onClick={openModal}>Place Bet</button>
+          <button onClick={() => openModal("Emmy's 2023 Winner", "$22,342")}>Place Bet</button>
         </div>
       </div>
     </div>
