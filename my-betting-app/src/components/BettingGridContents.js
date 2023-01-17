@@ -11,7 +11,7 @@ const BettingGridContents = () => {
                 </div>
                 <h3>Emmy's 2023 Winner</h3>
                 <div className="tile-footer">
-                <h4>$22,342</h4>
+                <h4>22,342</h4>
                 <button>Place Bet</button>
                 </div>
             </div>

@@ -19,12 +19,8 @@ function MyWalletContainer() {
           </div>
         </div>
         <div className="cash">
-          <h3>Cash</h3>
+          <h3>Total Points</h3>
           <p>{cash}</p>
-        </div>
-        <div className="betting-power">
-          <h3>Betting Power</h3>
-          <p>{bettingPower}</p>
         </div>
       </div>
     </div>

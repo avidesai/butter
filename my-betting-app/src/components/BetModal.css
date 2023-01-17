@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&family=Ubuntu:wght@500&display=swap');
 .modal-overlay {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* creates a 2-column grid */
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-template-areas:
   "exit exit"
   "title title"
@@ -29,8 +29,8 @@
 }
 
 .modal-content {
-  width: 40%;
-  height: 40%;
+  width: 30%;
+  height: 50%;
   background-color: white;
   padding: 20px;
   padding-bottom: 50px;
@@ -48,28 +48,37 @@
 .modal-close-button {
   grid-area: exit;
   position: absolute;
-  margin-top: -15px;
-  margin-left: -10px;
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  color: #999;
+  margin-top: -5px;
+  margin-left: 0px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 3px 3px 10px #999;
+  font-size: 18px;
+  border-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
   }
 
   .modal-content h3 {
     grid-area: title;
     text-align: center; /* centers the text */
-    margin-top: 50px;
-    font-size: 20px;
+    margin-top: 55px;
+    font-size: 26px;
     font-family:'Noto Sans', sans-serif;
   }
   
   .modal-content h4 {
     grid-area: price;
     text-align: center; /* centers the text */
-    margin: 0;
-    padding: 50px 10px;
-    font-size: 24px;
+    font-size: 30px;
+    margin-top: 55px;
+    margin-bottom: 0px;
+    padding-bottom: 30px;
     color: #0ba522;
     text-shadow: 1px 1px 1px rgb(254, 232, 64);
     font-family: 'Rubik', sans-serif;
@@ -77,32 +86,34 @@
 
   .modal-content input[name="betAmount"] {
     grid-area: input;
-    height: 40px;
+    height: 35px;
   }
 
   .bet-amount-input {
     font-family: 'Noto Sans', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
     padding: 10px;
+    padding-left: 20px;
     border-radius: 5px;
     border: 2px solid #333;
-    width: 55%;
+    width: 50%;
 }
-
 
   .modal-content button[type="submit"] {
     grid-area: submit;
     padding: 10px;
+    margin-top: 10px;
     margin-bottom: 15px;
     margin-right: 10px;
     margin-left: 15px;
     font-family: 'Rubik', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     background-color: rgb(48, 37, 255);
+    box-shadow: 3px 3px 10px #999;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 15px;
-    align-self: end;
+    align-self: center;
   }
