@@ -5,7 +5,7 @@
 .modal-overlay {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* creates a 2-column grid */
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
   "exit exit"
   "title title"
@@ -30,7 +30,7 @@
 
 .modal-content {
   width: 30%;
-  height: 50%;
+  height: 25%;
   background-color: white;
   padding: 20px;
   padding-bottom: 50px;
