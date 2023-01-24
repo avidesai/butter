@@ -20,7 +20,7 @@ function MyWalletContainer() {
         </div>
         <div className="cash">
           <h3>Cash</h3>
-          <p>{cash}</p>
+          <p className="dollars">{cash}</p>
         </div>
       </div>
     </div>

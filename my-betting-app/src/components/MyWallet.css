@@ -25,11 +25,11 @@
     text-align: center;
     margin-bottom: 10px;
     font-family: 'Rubik', sans-serif;
-    font-size: 35px;
+    font-size: 32px;
 }
 
   h3 {
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 10px;
     font-family: 'Rubik', sans-serif;
   }
@@ -39,6 +39,7 @@
     font-family: 'Rubik', sans-serif; 
     color: #0ba522;
     font-weight: bold;
+    text-shadow: 1px 1px 1px rgb(254, 232, 64);
   }
 
   .balance {
@@ -68,6 +69,7 @@
     max-height: 75x;
     font-size: 16px;
     background-color: rgb(64, 29, 237);
+    box-shadow: 1px 1px 4px #999;
     color: white;
     border: none;
     cursor: pointer;
