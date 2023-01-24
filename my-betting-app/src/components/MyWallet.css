@@ -76,6 +76,9 @@
     margin-top: 10px;
     padding: 8px 8px 8px 8px;
   }
+  .balance button:hover {
+    background-color: #b730fa;
+  }
   
   .cash {
     float: left;
