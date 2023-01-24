@@ -62,7 +62,7 @@
   }
 
   .balance button {
-    border-radius: 5px;
+    border-radius: 15px;
     font-family: 'Rubik', sans-serif;
     grid-area: button;
     max-width: 150px;

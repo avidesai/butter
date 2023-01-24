@@ -30,7 +30,7 @@
 
 .modal-content {
   width: 35%;
-  height: 50%;
+  height: 75%;
   background-color: white;
   padding: 20px;
   padding-bottom: 50px;
@@ -92,6 +92,9 @@
   .modal-content input[name="betAmount"] {
     grid-area: input;
     height: 35px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 20px;
   }
 
   .bet-amount-input {
