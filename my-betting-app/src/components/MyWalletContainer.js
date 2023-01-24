@@ -8,7 +8,7 @@ function MyWalletContainer() {
 
   return (
     <div className="my-wallet-container">
-      <h2>My Wallet</h2>
+      <h1>My Wallet</h1>
       <div className="wallet-info">
         <div className="balance">
           <h3>Balance</h3>
@@ -19,7 +19,7 @@ function MyWalletContainer() {
           </div>
         </div>
         <div className="cash">
-          <h3>Total Points</h3>
+          <h3>Cash</h3>
           <p>{cash}</p>
         </div>
       </div>
