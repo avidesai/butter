@@ -29,13 +29,12 @@
 }
 
 .modal-content {
-  width: 30%;
-  height: 25%;
+  width: 35%;
+  height: 50%;
   background-color: white;
   padding: 20px;
   padding-bottom: 50px;
   border-radius: 10px;
-  box-shadow: 2px 2px 8px #999;
   font-size: 20px;
   display: none;
 }
@@ -69,7 +68,7 @@
     text-align: center; /* centers the text */
     margin-top: 55px;
     font-size: 26px;
-    font-family:'Noto Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
   }
   
   .modal-content h4 {
@@ -83,6 +82,12 @@
     text-shadow: 1px 1px 1px rgb(254, 232, 64);
     font-family: 'Rubik', sans-serif;
     }
+
+  .modal-content p {
+    color:black;
+    font-size: 20px;
+    font-weight: 300;
+  }
 
   .modal-content input[name="betAmount"] {
     grid-area: input;
@@ -110,7 +115,7 @@
     font-family: 'Rubik', sans-serif;
     font-size: 22px;
     background-color: rgb(48, 37, 255);
-    box-shadow: 3px 3px 10px #999;
+    box-shadow: 3px 3px 8px rgb(108, 107, 107);
     color: white;
     border: none;
     cursor: pointer;

@@ -9,13 +9,11 @@ const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
             <button onClick={closeModal} className="modal-close-button">X</button>
             <h3>{title}</h3>
             <h4>{price}</h4>
-            <div className="bottom part">
+            <div className="bottom-part">
               <p>Enter bet amount:</p>
-              <div className="button input"></div>
               <input type="number" name="betAmount" min="1" required className="bet-amount-input" />
               <button type="submit">Submit</button>
             </div>
-            
         </div>
     </div>
   );

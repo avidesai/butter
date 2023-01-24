@@ -61,7 +61,7 @@
     margin-top: 50px;
     grid-area: title;
     font-size: 20px;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
   }
 
   .tile-footer {
@@ -76,7 +76,7 @@
   .tile h4 {
     grid-area: price;
     margin: 0;
-    padding: 0 10px;
+    padding: 0px 10px;
     font-size: 20px;
     color: #0ba522;
     text-shadow: 1px 1px 1px rgb(254, 232, 64);
