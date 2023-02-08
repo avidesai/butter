@@ -40,6 +40,7 @@
     box-shadow: 2px 2px 8px #999;
     border-radius: 5px;  
     background-color: white;
+    text-shadow: none;
   }
   .tile-timer img{
     width: 25px;
@@ -54,8 +55,8 @@
     margin-bottom: 0px;
     font-weight: 100;
     color:black;
+    
   }
-  
 
   .tile h3 {
     margin-top: 50px;
@@ -79,9 +80,8 @@
     padding: 0px 10px;
     font-size: 20px;
     color: #0ba522;
-    text-shadow: 1px 1px 1px rgb(254, 232, 64);
-    font-family: 'Rubik', sans-serif;
-    }
+     font-family: 'Rubik', sans-serif;
+  }
   
   .tile button {
     grid-area: button;
