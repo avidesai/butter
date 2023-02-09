@@ -24,25 +24,55 @@ function MyWalletContainer() {
   }, []);
 
   const toggleModal = () => setShowModal(!showModal);
+  const [formType, setFormType] = React.useState("Login");
 
   return (
     <div className="my-wallet-container">
       <h1>Welcome, {name}!</h1>
       {/* Show the modal only if showModal is true */}
       {showModal && (
-        <div className="modal-wrapper">
-          <div className="modal">
-            <button onClick={toggleModal} className="modal-close-button">X</button>
-            <h2>Login/Create Account</h2>
-            {/* form for login/create account */}
-            <form>
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
-              <button type="submit" onClick={toggleModal}>Submit</button>
-            </form>
-            
-          </div>
-        </div>
+         <div className="modal-wrapper">
+         <div className="modal">
+           <button onClick={toggleModal} className="modal-close-button">X</button>
+           <h2>Log In / Create Account</h2>
+           {/* centered toggle */}
+           <div className="form-toggle">
+             <button
+               className={formType === "Login" ? "active" : ""}
+               onClick={() => setFormType("Login")}
+             >
+               Log In
+             </button>
+             <button
+               className={formType === "Create Account" ? "active" : ""}
+               onClick={() => setFormType("Create Account")}
+             >
+               Create Account
+             </button>
+           </div>
+           {/* form for login/create account */}
+           {formType === "Login" ? (
+             <form>
+               <input type="email" placeholder="Email" />
+               <input type="password" placeholder="Password" />
+               <button type="submit" onClick={toggleModal}>
+                 Submit
+               </button>
+             </form>
+           ) : (
+             <form>
+                <input type="text" placeholder="First Name" />
+                <input type="text" placeholder="Last Name" />
+               <input type="email" placeholder="Email" />
+               <input type="password" placeholder="Password" />
+               <input type="password" placeholder="Confirm Password" />
+               <button type="submit" onClick={toggleModal}>
+                 Submit
+               </button>
+             </form>
+           )}
+         </div>
+       </div>
       )}
       <div className="wallet-info">
         <div className="balance">

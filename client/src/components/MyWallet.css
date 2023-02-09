@@ -93,7 +93,32 @@
 button[type="submit"]:hover {
   background-color: #b730fa;
 }
-  
+
+.form-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+button[type="submit"]:hover {
+  background-color: #b730fa;
+}
+
+.form-toggle button {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  margin: 0 8px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Rubik', sans-serif;
+}
+
+.form-toggle .active {
+  background-color: rgb(64, 29, 237);
+  color: white;
+}
+
   .wallet-info {
     display: flex;
     justify-content: space-between;
@@ -162,15 +187,21 @@ button[type="submit"]:hover {
     margin: 20px;
   }
 
-.active-bets-container, .past-bets-container {
+  .active-bets-container, .past-bets-container {
     border-radius: 25px;
     box-shadow: 5px 5px 10px #ccc;
+    padding: 30px;
+    padding-bottom: 30px;
     margin: 15px;
+    margin-bottom: 30px;
     background-color: rgba(174, 174, 174, 0.18);
     color:black;
     font-size: 16px;
 }
 
+.bet-name {
+  width: 80%;
+}
   .button-stack {
     padding-top: 15px;
     display: flex;

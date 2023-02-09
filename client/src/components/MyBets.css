@@ -25,18 +25,6 @@
     align-items: center;
 }
 
-.active-bets-container, .past-bets-container {
-    border-radius: 25px;
-    box-shadow: 5px 5px 10px #ccc;
-    padding: 30px;
-    padding-bottom: 30px;
-    margin: 15px;
-    width: 50%;
-    background-color: rgba(174, 174, 174, 0.18);
-    color:black;
-    font-size: 16px;
-}
-
 .my-bets-container h1 {
     text-align: center;
     padding-top: 15px;
@@ -63,9 +51,7 @@
     text-align: left;
     font-family: 'Rubik', sans-serif;
 }
-.bet-name {
-    width: 80%;
-}
+
 .player-name {
     width: 40%;
 }
