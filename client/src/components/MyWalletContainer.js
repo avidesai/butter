@@ -7,6 +7,7 @@ function MyWalletContainer() {
   const [pastBets, setPastBets] = useState([    { id: 4, bet: "Golden Globes 2023", profitLoss: "+75" },    { id: 5, bet: "Taylor Swift", profitLoss: "-5" },    { id: 6, bet: "Barack Obama", profitLoss: "+30" },  ]);
   const [balance, setBalance] = useState(0);
   const [cash, setCash] = useState(0);
+  const [karma, setKarma] = useState(0);
   const [name, setName] = useState('');
 
   useEffect(() => {
@@ -17,6 +18,7 @@ function MyWalletContainer() {
         setBalance(data.balance);
         setCash(data.cash);
         setName(data.name);
+        setKarma(data.karma);
       })
       .catch(error => {
         console.error(error);
@@ -29,6 +31,11 @@ function MyWalletContainer() {
   return (
     <div className="my-wallet-container">
       <h1>Welcome, {name}!</h1>
+      <div className="karma-box">
+        <p className="karma-balance">
+        &#128293;	{karma} Karma
+        </p>
+      </div>
       {/* Show the modal only if showModal is true */}
       {showModal && (
          <div className="modal-wrapper">

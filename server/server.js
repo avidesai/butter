@@ -3,9 +3,10 @@ const app = express()
 
 app.get("/api", (req, res) => {
     res.json({
-        name: "Mr. Butter",
+        name: "John Smith",
         balance: 1000,
-        cash: 500
+        cash: 500,
+        karma: 250
     })
 })
 

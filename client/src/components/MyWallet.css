@@ -10,6 +10,23 @@
     align-items: center;
   }
 
+  .karma-box {
+    background-color: white;
+    border: black 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    text-align: center;
+    }
+    
+    .karma-balance {
+      font-family: 'Rubik', sans-serif; 
+      font-size: 16px;
+      font-weight: bold;
+      color: black;
+      margin: 0;
+      }
+
   .modal-wrapper {
     position: absolute;
     top: 0;
@@ -158,11 +175,14 @@ button[type="submit"]:hover {
     font-family: 'Rubik', sans-serif;
   }
 
-  .my-wallet-container p {
+  .balance, .cash p {
     font-size: 24px;
     font-family: 'Rubik', sans-serif; 
     color: #0ba522;
     font-weight: bold;
+  }
+  .balance h3 {
+    color:black;
   }
 
   .my-wallet-container table {
