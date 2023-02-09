@@ -28,7 +28,7 @@
 .active-bets-container, .past-bets-container {
     border-radius: 25px;
     box-shadow: 5px 5px 10px #ccc;
-    padding: 25px;
+    padding: 30px;
     padding-bottom: 30px;
     margin: 15px;
     width: 50%;
@@ -37,26 +37,27 @@
     font-size: 16px;
 }
 
-h1 {
+.my-bets-container h1 {
+    text-align: center;
     padding-top: 15px;
     padding-bottom: 15px;
     font-family: 'Rubik', sans-serif;
-    font-size: 18px;
+    font-size: 28px;
 }
 
-h3 {
+.my-bets-container h3 {
     text-align: center;
     padding-bottom: 15px;
     font-size: 22px;
     font-family: 'Noto Sans', sans-serif;
 }
 
-table {
+.my-bets-container table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th, td {
+.my-bets-container th, td {
     border: 1px solid rgba(77, 77, 77, 0.242);
     padding: 8px;
     text-align: left;

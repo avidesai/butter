@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 .my-wallet-container {
-    padding-top: 100px;
+    padding-top: 120px;
     padding-bottom: 50px;
     display: flex;
     flex-direction: column;
@@ -15,42 +15,77 @@
     justify-content: space-between;
     margin: 10px;
   }
+
+  .bets-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
-  .balance, .cash{
+  .balance, .cash, .active-bets-container, .past-bets-container {
     width: 30%;
     text-align: center;
+    border-radius: 15px;
   }
 
-  h1 {
+  .my-wallet-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 28px;
+  }
+
+  .my-wallet-container h2 {
     text-align: center;
     margin-bottom: 10px;
     font-family: 'Rubik', sans-serif;
-    font-size: 32px;
+    font-size: 24px;
 }
 
-  h3 {
+  .my-wallet-container h3 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
+    text-align: center;
     font-family: 'Rubik', sans-serif;
   }
 
-  p {
+  .my-wallet-container p {
     font-size: 24px;
     font-family: 'Rubik', sans-serif; 
     color: #0ba522;
     font-weight: bold;
   }
 
+  .my-wallet-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.my-wallet-container th, td {
+    border: 1px solid rgba(77, 77, 77, 0.242);
+    padding: 10px;
+    text-align: left;
+    font-family: 'Rubik', sans-serif;
+}
+
   .balance {
     float: left;
     width: 220px;
     height: 220px;
-    border-radius: 10px;
     background-color: #f1f1f1;
-    box-shadow: 3px 3px 10px #999;
+    box-shadow: 5px 5px 10px #ccc;
     padding: 20px;
     margin: 20px;
   }
+
+.active-bets-container, .past-bets-container {
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px #ccc;
+    margin: 15px;
+    background-color: rgba(174, 174, 174, 0.18);
+    color:black;
+    font-size: 16px;
+}
 
   .button-stack {
     padding-top: 15px;
@@ -83,9 +118,8 @@
     float: left;
     width: 220px;
     height: 220px;
-    border-radius: 10px;
     background-color: #f1f1f1;
-    box-shadow: 3px 3px 10px #999;
+    box-shadow: 5px 5px 10px #ccc;
     padding: 20px;
     margin: 20px;
   }

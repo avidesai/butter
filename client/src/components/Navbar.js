@@ -36,7 +36,7 @@ function Navbar({setIsBetsPage, setIsWalletPage, setIsUserPage, setIsHomePage}) 
         <div className="navbar-right">
             <div className="navbar-buttons">
               <button onClick={handleBets}>&#128200;</button>
-              <button onClick={handleWallet}>&#128181;</button>
+              <button onClick={handleWallet}>&#128100;</button>
               <button onClick={handleUser}>&#127758;</button>
             </div>
         </div>

@@ -48,12 +48,12 @@
   }
   
   .tile-timer p {
+    font-family: 'Rubik', sans-serif; 
     margin-left: 5px;
     margin-right: 5px;
     font-size: 14px;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-weight: 100;
     color:black;
     
   }
