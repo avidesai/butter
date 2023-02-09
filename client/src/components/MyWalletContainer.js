@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './MyWalletContainer.css';
 
 function MyWalletContainer() {
+  const [showModal, setShowModal] = useState(true);
   const [activeBets, setActiveBets] = useState([    { id: 1, bet: "Emmy's 2023", profitLoss: "+50" },    { id: 2, bet: "Super Bowl 2022", profitLoss: "-20" },    { id: 3, bet: "Grammy's 2023", profitLoss: "+40" },  ]);
   const [pastBets, setPastBets] = useState([    { id: 4, bet: "Golden Globes 2023", profitLoss: "+75" },    { id: 5, bet: "Taylor Swift", profitLoss: "-5" },    { id: 6, bet: "Barack Obama", profitLoss: "+30" },  ]);
   const [balance, setBalance] = useState(0);
@@ -22,9 +23,27 @@ function MyWalletContainer() {
       });
   }, []);
 
+  const toggleModal = () => setShowModal(!showModal);
+
   return (
     <div className="my-wallet-container">
       <h1>Welcome, {name}!</h1>
+      {/* Show the modal only if showModal is true */}
+      {showModal && (
+        <div className="modal-wrapper">
+          <div className="modal">
+            <button onClick={toggleModal} className="modal-close-button">X</button>
+            <h2>Login/Create Account</h2>
+            {/* form for login/create account */}
+            <form>
+              <input type="email" placeholder="Email" />
+              <input type="password" placeholder="Password" />
+              <button type="submit" onClick={toggleModal}>Submit</button>
+            </form>
+            
+          </div>
+        </div>
+      )}
       <div className="wallet-info">
         <div className="balance">
           <h3>Balance</h3>
