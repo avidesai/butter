@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './MyWalletContainer.css';
 
 function MyWalletContainer() {
   const [showModal, setShowModal] = useState(true);
   const [activeBets, setActiveBets] = useState([    { id: 1, bet: "Emmy's 2023", profitLoss: "+50" },    { id: 2, bet: "Super Bowl 2022", profitLoss: "-20" },    { id: 3, bet: "Grammy's 2023", profitLoss: "+40" },  ]);
   const [pastBets, setPastBets] = useState([    { id: 4, bet: "Golden Globes 2023", profitLoss: "+75" },    { id: 5, bet: "Taylor Swift", profitLoss: "-5" },    { id: 6, bet: "Barack Obama", profitLoss: "+30" },  ]);
-  const [balance, setBalance] = useState(0);
-  const [cash, setCash] = useState(0);
-  const [karma, setKarma] = useState(0);
-  const [name, setName] = useState('');
+  const [balance, setBalance] = useState(1000);
+  const [cash, setCash] = useState(500);
+  const [karma, setKarma] = useState(250);
+  const [name, setName] = useState('John Doe');
 
   useEffect(() => {
     fetch('/api')
@@ -28,9 +29,32 @@ function MyWalletContainer() {
   const toggleModal = () => setShowModal(!showModal);
   const [formType, setFormType] = React.useState("Login");
 
+  const createAccount = (event) => {
+    event.preventDefault();
+    const firstName = event.target.elements.firstName.value;
+    const lastName = event.target.elements.lastName.value;
+    const email = event.target.elements.email.value;
+    const password = event.target.elements.password.value;
+    const confirmPassword = event.target.elements.confirmPassword.value;
+  
+    axios.post("https://data.mongodb-api.com/app/data-rcddd/endpoint/data/v1", {
+      firstName,
+      lastName,
+      email,
+      password,
+      confirmPassword
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   return (
     <div className="my-wallet-container">
-      <h1>Welcome, {name}!</h1>
+      <h1>Welcome {name} &#129412;</h1>
       <div className="karma-box">
         <p className="karma-balance">
         &#128293;	{karma} Karma
@@ -67,16 +91,16 @@ function MyWalletContainer() {
                </button>
              </form>
            ) : (
-             <form>
-                <input type="text" placeholder="First Name" />
-                <input type="text" placeholder="Last Name" />
-               <input type="email" placeholder="Email" />
-               <input type="password" placeholder="Password" />
-               <input type="password" placeholder="Confirm Password" />
-               <button type="submit" onClick={toggleModal}>
-                 Submit
-               </button>
-             </form>
+            <form onSubmit={createAccount}>
+              <input type="text" placeholder="First Name" name="firstName" />
+              <input type="text" placeholder="Last Name" name="lastName" />
+              <input type="email" placeholder="Email" name="email" />
+              <input type="password" placeholder="Password" name="password" />
+              <input type="password" placeholder="Confirm Password" name="confirmPassword" />
+              <button type="submit" onClick={toggleModal}>
+                Submit
+              </button>
+            </form>
            )}
          </div>
        </div>
@@ -91,7 +115,7 @@ function MyWalletContainer() {
           </div>
         </div>
         <div className="cash">
-          <h3>Cash</h3>
+          <h3>Betting Power</h3>
           <p className="dollars">{cash}</p>
         </div>
       </div>

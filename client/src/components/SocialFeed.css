@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.social-feed-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(174, 174, 174, 0.18);
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px #ccc;
+    padding: 20px 50px 20px 50px;
+    }
+
+    .social-feed-title{
+        font-family: 'Rubik', sans-serif;
+    }
+    
+    .social-feed-comment {
+    border-bottom: 1px solid rgba(77, 77, 77, 0.242);
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 16px;
+    }
+    
+    .social-feed-username {
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    color: rgb(48, 37, 255);
+    }
+    
+    .social-feed-text {
+    font-family: 'Rubik', sans-serif;
+    padding-left: 8px;
+    }
+    
+    .social-feed-input {
+    font-family: 'Rubik', sans-serif;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(77, 77, 77, 0.242);
+    margin-right: 8px;
+    font-size: 16px;
+    width: 69%;
+    }
+    
+    .social-feed-submit-button {
+    font-family: 'Rubik', sans-serif;
+    background-color:rgb(48, 37, 255);
+    color: white;
+    padding: 14px 14px;
+    margin-left: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    }

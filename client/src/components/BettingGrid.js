@@ -104,7 +104,7 @@ const BettingGrid = () => {
         <h3>Golden Globes Winner</h3>
         <div className="tile-footer">
           <h4>12,184</h4>
-          <button onClick={() => openModal("Emmy's 2023 Winner", "22,342")}>Place Bet</button>
+          <button onClick={() => openModal("Golden Globes Winner", "22,342")}>Place Bet</button>
         </div>
       </div>
     </div>
