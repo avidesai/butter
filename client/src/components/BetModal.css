@@ -3,21 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&family=Ubuntu:wght@500&display=swap');
 .modal-overlay {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* creates a 2-column grid */
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas:
-  "exit exit"
-  "title title"
-  "price price"
-  "input submit";
-  grid-gap: 10px; /* adds a 10px gap between the columns and rows */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.619);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 10;
   display: flex;
   align-items: center;
@@ -29,14 +20,15 @@
 }
 
 .modal-content {
-  width: 35%;
-  height: 55%;
+  width: 33%;
+  height: 65%;
   background-color: white;
   padding: 20px;
   padding-bottom: 50px;
   border-radius: 10px;
   font-size: 20px;
   display: none;
+  font-family: 'Rubik', sans-serif;
 }
 
 
@@ -44,10 +36,9 @@
   display: block;
 }
 
-.modal-close-button {
-  grid-area: exit;
+.bet-modal-close-button {
   position: absolute;
-  margin-top: -5px;
+  margin-top: -60px;
   margin-left: 0px;
   width: 40px;
   height: 40px;
@@ -64,7 +55,6 @@
   }
 
   .modal-content h3 {
-    grid-area: title;
     text-align: center; /* centers the text */
     margin-top: 55px;
     font-size: 26px;
@@ -72,15 +62,30 @@
   }
   
   .modal-content h4 {
-    grid-area: price;
     text-align: center; /* centers the text */
-    font-size: 30px;
-    margin-top: 55px;
-    margin-bottom: 0px;
+    font-size: 28px;
+    margin-top: 45px;
+    margin-bottom: 10px;
     padding-bottom: 30px;
     color: #0ba522;
-    text-shadow: 1px 1px 1px rgb(254, 232, 64);
     font-family: 'Rubik', sans-serif;
+    }
+
+    .choice-container {
+      display: table-row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .choice-container input[type="radio"] {
+      margin-right: 8px;
+    }
+    .choice-container input[type="radio"]:checked + label {
+      color:rgb(48, 37, 255);
+    } 
+    .choice-selection {
+      margin-top: 15px;
+      margin-bottom: 10px;
     }
 
   .modal-content p {
@@ -91,12 +96,17 @@
   }
 
   .modal-content input[name="betAmount"] {
-    grid-area: input;
     height: 35px;
     font-size: 20px;
   }
 
+  .entry-form{
+    margin-top: 25px;
+    width: 100%
+  }
+
   .bet-amount-input {
+    width: 50%;
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
     color: #333;
@@ -105,11 +115,9 @@
     border-radius: 5px;
     margin-right: 15px;
     border: 2px solid #333;
-    width: 60%;
 }
 
   .modal-content button[type="submit"] {
-    grid-area: submit;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 15px;

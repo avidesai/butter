@@ -6,12 +6,36 @@ import BetModal from './BetModal';
 import Clock from '../images/clock.png';
 
 const BET_OPTIONS = [
-{ title: "Emmy's 2023 Winner", price: 22342 },
-{ title: "Best Album of 2022", price: 9527 },
-{ title: "Is Leonardo DiCaprio's Relationship Acceptable?", price: 127833 },
-{ title: "⚠️ Will Trump Get Impeached? ⚠️", price: 2391 },
-{ title: "Is COVID-19 a man made virus?", price: 19935 },
-{ title: "Best Movie to Watch on a Rainy Day", price: 1234 },
+  {
+  title: "Emmy's 2023 Best Comedy Series",
+  price: 22342,
+  choices: ["Barry", "Ted Lasso", "Curb Your Enthusiasm", "The Kominsky Method", "Schitt's Creek"]
+  },
+  {
+  title: "Best Album of 2022",
+  price: 9527,
+  choices: ["Renaissance by Beyoncé", "Ramona Park Broke My Heart by Vince Staples", "Un Verano Sin Ti by Bad Bunny", "The Slow Rush by Tame Impala"]
+  },
+  {
+  title: "Is Leonardo DiCaprio's Relationship Acceptable?",
+  price: 127833,
+  choices: ["Yes", "No"]
+  },
+  {
+  title: "⚠️ Will Trump Get Impeached? ⚠️",
+  price: 2391,
+  choices: ["Yes", "No"]
+  },
+  {
+  title: "Is COVID-19 a man made virus?",
+  price: 19935,
+  choices: ["Yes", "No"]
+  },
+  {
+  title: "Best Movie to Watch on a Rainy Day",
+  price: 1234,
+  choices: ["The Breakfast Club", "Ferris Bueller's Day Off", "Forrest Gump", "Harry Potter and the Deathly Hallows", "The Shawshank Redemption"]
+  },
 ];
 
 const BettingGrid = () => {
@@ -23,9 +47,9 @@ const handleBetAmount = (e) => {
   e.preventDefault();
 };
 
-const openModal = (title, price) => {
+const openModal = (title, price, choices) => {
   setModalOpen(true);
-  setModalData({ title, price });
+  setModalData({ title, price, choices});
 };
 
 const closeModal = () => {
@@ -56,7 +80,7 @@ return (
         <h3>{option.title}</h3>
         <div className="tile-footer">
           <h4>{option.price.toLocaleString()}</h4>
-          <button onClick={() => openModal(option.title, option.price)}>Place Bet</button>
+          <button onClick={() => openModal(option.title, option.price, option.choices)}>Place Bet</button>
         </div>
       </div>
     ))}
