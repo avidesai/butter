@@ -54,7 +54,7 @@ function MyWalletContainer() {
 
   return (
     <div className="my-wallet-container">
-      <h1>Welcome {name} &#129412;</h1>
+      <h1>Welcome <span className="purple-name">{name}</span> &#129412;</h1>
       <div className="karma-box">
         <p className="karma-balance">
         &#128293;	{karma} Karma

@@ -77,6 +77,10 @@
   padding-bottom: 20px;
 }
 
+.purple-name{
+  color: rgb(64, 29, 237);
+}
+
 .modal-close-button {
   top: 15px;
   left: 10px;
