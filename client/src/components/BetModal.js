@@ -19,5 +19,4 @@ const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
   );
 }
 
-
 export default BetModal;
