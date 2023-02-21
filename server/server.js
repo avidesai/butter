@@ -1,6 +1,33 @@
 const express = require('express');
-const mysql = require('mysql');
 const app = express();
+const mysql = require('mysql2/promise');
+
+// Create a new connection pool
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'root',
+  password: 'Hawaii11',
+  database: 'bet_database',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
+});
+
+// Query the database to retrieve the BET_OPTIONS data
+async function getBetOptions() {
+  const [rows, fields] = await pool.query('SELECT * FROM BET_OPTIONS');
+  return rows;
+}
+
+app.get('/api/getBetOptions', async (req, res) => {
+  try {
+    const betOptions = await getBetOptions();
+    res.json(betOptions);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Server Error');
+  }
+});
 
 app.get("/api", (req, res) => {
     res.json({
@@ -11,23 +38,5 @@ app.get("/api", (req, res) => {
     })
 })
 
-const pool = mysql.createPool({
-  connectionLimit: 10,
-  host: 'localhost',
-  user: 'myuser',
-  password: 'mypassword',
-  database: 'mydatabase'
-});
-
-app.get('/api/bet-options', (req, res) => {
-    pool.query('SELECT * FROM bet_options', (error, results, fields) => {
-      if (error) {
-        res.status(500).json({ message: 'Error retrieving data from database' });
-      } else {
-        res.json(results);
-      }
-    });
-  });
-  
 
 app.listen(4000, () => { console.log("Server started on port 4000") })
