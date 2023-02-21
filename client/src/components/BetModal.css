@@ -20,16 +20,18 @@
 }
 
 .modal-content {
-  width: 33%;
-  height: 65%;
+  width: auto;
+  max-height: 80vh;
   background-color: white;
-  padding: 20px;
+  padding: 30px;
   padding-bottom: 50px;
   border-radius: 10px;
   font-size: 20px;
-  display: none;
   font-family: 'Rubik', sans-serif;
-}
+  height: auto;
+  overflow-y: auto;
+  }
+
 
 
 .modal-content.is-open {
@@ -38,8 +40,8 @@
 
 .bet-modal-close-button {
   position: absolute;
-  margin-top: -60px;
-  margin-left: 0px;
+  margin-top: -70px;
+  margin-left: -10px;
   width: 40px;
   height: 40px;
   background-color: white;

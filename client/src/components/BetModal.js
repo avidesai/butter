@@ -4,10 +4,32 @@ import './BetModal.css';
 const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
   const { title, price, choices } = data;
   const [selectedOption, setSelectedOption] = useState();
+  const [betAmount, setBetAmount] = useState('');
   const isOptionSelected = selectedOption !== undefined;
 
   const handleRadioChange = (event) => {
     setSelectedOption(event.target.value);
+  };
+
+  const handleBetInputChange = (event) => {
+    setBetAmount(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!isOptionSelected) {
+      alert('Please select an option');
+      return;
+    }
+
+    if (!betAmount) {
+      alert('Please enter a bet amount');
+      return;
+    }
+
+    handleBetAmount(selectedOption, betAmount);
+    closeModal();
   };
 
   return (
@@ -35,16 +57,18 @@ const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
               ))}
             </div>
           )}
-          <form onSubmit={handleBetAmount} className="entry-form">
+          <form onSubmit={handleSubmit} className="entry-form">
             <input
               type="number"
               name="betAmount"
               min="1"
               required
+              value={betAmount}
+              onChange={handleBetInputChange}
               className="bet-amount-input"
               placeholder="Enter bet amount"
             />
-            <button type="submit" disabled={!isOptionSelected} onClick={closeModal}>Submit</button>
+            <button type="submit" disabled={!isOptionSelected}>Submit</button>
           </form>
         </div>
       </div>
@@ -53,3 +77,4 @@ const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
 };
 
 export default BetModal;
+

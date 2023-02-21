@@ -9,7 +9,7 @@ const BET_OPTIONS = [
   {
   title: "Emmy's Best Comedy Series 🎭",
   price: 22342,
-  choices: ["Barry", "Ted Lasso", "Curb Your Enthusiasm", "The Kominsky Method", "Schitt's Creek"]
+  choices: ["Barry", "Ted Lasso", "Curb Your Enthusiasm", "Schitt's Creek"]
   },
   {
   title: "Best Album of 2022 🎶",
@@ -34,7 +34,7 @@ const BET_OPTIONS = [
   {
   title: "Best Movie to Watch on a Rainy Day ☔",
   price: 1234,
-  choices: ["The Breakfast Club", "Ferris Bueller's Day Off", "Forrest Gump", "Harry Potter and the Deathly Hallows", "The Shawshank Redemption"]
+  choices: ["The Breakfast Club", "Ferris Bueller's Day Off", "Forrest Gump", "The Shawshank Redemption"]
   },
 ];
 
@@ -43,8 +43,8 @@ const BettingGrid = () => {
   const [modalData, setModalData] = useState({});
   const [timeLeft, setTimeLeft] = useState(moment().startOf('day').seconds(9000).format('H:mm'));
 
-const handleBetAmount = (e) => {
-  e.preventDefault();
+const handleBetAmount = (selectedOption, betAmount) => {
+  console.log(`Selected option: ${selectedOption}, Bet amount: ${betAmount}`);
 };
 
 const openModal = (title, price, choices) => {
