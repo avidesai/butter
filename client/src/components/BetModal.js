@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import './BetModal.css';
 
 const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
+  console.log(data);
   const { title, price, choices } = data;
+  console.log(title, price, choices);
   const [selectedOption, setSelectedOption] = useState();
   const [betAmount, setBetAmount] = useState('');
   const isOptionSelected = selectedOption !== undefined;
@@ -40,10 +42,10 @@ const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
           <h3>{title}</h3>
         </div>
         <div className="modal-body">
-          <h4>{price}</h4>
+          <h4>{Number(price).toLocaleString(undefined, { maximumFractionDigits: 0, minimumFractionDigits: 0 })}</h4>
           {choices && choices.length > 0 && (
             <div className="choice-container">
-              {choices.map((choice, index) => (
+              {JSON.parse(choices).map((choice, index) => (
                 <div key={index} className="choice-selection">
                   <input
                     type="radio"

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Helmet>
-        <title>butter</title>
+        <title>butter.</title>
         <meta name="description" content="Bet on the world." />
         <link rel="icon" href="butter.png" />
       </Helmet>

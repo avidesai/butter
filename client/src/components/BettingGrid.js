@@ -91,7 +91,7 @@ const BettingGrid = () => {
           </div>
           <h3>{option.title}</h3>
           <div className="tile-footer">
-            <h4>{option.price.toLocaleString()}</h4>
+            <h4>{Number(option.price).toLocaleString(undefined, { maximumFractionDigits: 0, minimumFractionDigits: 0 })}</h4>
             <button onClick={() => openModal(option.title, option.price, option.choices)}>Place Bet</button>
           </div>
         </div>
