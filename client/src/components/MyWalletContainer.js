@@ -35,14 +35,25 @@ function MyWalletContainer() {
     const lastName = event.target.elements.lastName.value;
     const email = event.target.elements.email.value;
     const password = event.target.elements.password.value;
-    const confirmPassword = event.target.elements.confirmPassword.value;
   
-    axios.post("https://data.mongodb-api.com/app/data-rcddd/endpoint/data/v1", {
+    // Set default values for balance, betting_power, karma, active_bets, and past_bets
+    const balance = 500;
+    const bettingPower = 500;
+    const karma = 50;
+    const activeBets = "";
+    const pastBets = "";
+  
+    // Send a POST request to the API to create a new account
+    axios.post("/api/createUserAccount", {
       firstName,
       lastName,
       email,
       password,
-      confirmPassword
+      balance,
+      bettingPower,
+      karma,
+      activeBets,
+      pastBets
     })
     .then(function (response) {
       console.log(response);
@@ -50,7 +61,11 @@ function MyWalletContainer() {
     .catch(function (error) {
       console.log(error);
     });
+  
+    // Hide the modal
+    toggleModal();
   }
+  
 
   return (
     <div className="my-wallet-container">
@@ -97,7 +112,7 @@ function MyWalletContainer() {
               <input type="email" placeholder="Email" name="email" />
               <input type="password" placeholder="Password" name="password" />
               <input type="password" placeholder="Confirm Password" name="confirmPassword" />
-              <button type="submit" onClick={toggleModal}>
+              <button type="submit">
                 Submit
               </button>
             </form>

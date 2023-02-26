@@ -29,6 +29,37 @@ app.get('/api/getBetOptions', async (req, res) => {
   }
 });
 
+app.post('/api/createUserAccount', async (req, res) => {
+  try {
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
+    const password = req.body.password;
+    const balance = 500;
+    const bettingPower = 500;
+    const karma = 50;
+    const activeBets = '';
+    const pastBets = '';
+
+    // Insert the new record into the USER_ACCOUNTS table
+    const [result] = await pool.execute(
+      `INSERT INTO USER_ACCOUNTS (first_name, last_name, email, password, balance, betting_power, karma, active_bets, past_bets)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [firstName, lastName, email, password, balance, bettingPower, karma, activeBets, pastBets]
+    );    
+
+    // Log the contents of the USER_ACCOUNTS table
+    const [rows] = await pool.execute('SELECT * FROM USER_ACCOUNTS');
+    console.log(rows);
+
+    res.json({ success: true });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Server Error');
+  }
+});
+
+
 app.get("/api", (req, res) => {
     res.json({
         name: "John Smith",
