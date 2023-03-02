@@ -79,7 +79,7 @@ function MyWalletContainer() {
       {showModal && (
          <div className="modal-wrapper">
          <div className="modal">
-           <button onClick={toggleModal} className="modal-close-button">X</button>
+           <button onClick={toggleModal} className="wallet-modal-close-button">X</button>
            <h2>Log In / Create Account</h2>
            {/* centered toggle */}
            <div className="form-toggle">

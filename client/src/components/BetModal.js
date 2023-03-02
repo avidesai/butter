@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import './BetModal.css';
 
 const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
-  console.log(data);
   const { title, price, choices } = data;
-  console.log(title, price, choices);
-  const [selectedOption, setSelectedOption] = useState();
+   const [selectedOption, setSelectedOption] = useState();
   const [betAmount, setBetAmount] = useState('');
   const isOptionSelected = selectedOption !== undefined;
 
