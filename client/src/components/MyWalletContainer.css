@@ -1,51 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 .my-wallet-container {
-    padding-top: 120px;
-    padding-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  padding: 120px 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .karma-box {
-    background-color: white;
-    border: black 1px solid;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 5px;
-    text-align: center;
-    }
-    
-    .karma-balance {
-      font-family: 'Rubik', sans-serif; 
-      font-size: 16px;
-      font-weight: bold;
-      color: black;
-      margin: 0;
-      }
+.karma-box {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
-  .modal-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.karma-balance {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-wrapper form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 25px;
-    font-family: 'Rubik', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 25px;
+  font-family: 'Rubik', sans-serif;
 }
 
 .modal {
@@ -64,7 +62,7 @@
 .modal-wrapper form input {
   width: 225px;
   padding: 10px;
-  border: black 1px solid;
+  border: 1px solid black;
   border-radius: 5px;
   font-size: 16px;
   margin-bottom: 10px;
@@ -74,11 +72,11 @@
 
 .modal h2 {
   padding-top: 35px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Rubik', sans-serif;
   padding-bottom: 20px;
 }
 
-.purple-name{
+.purple-name {
   color: rgb(64, 29, 237);
 }
 
@@ -131,107 +129,98 @@ button[type="submit"]:hover {
   border-radius: 25px;
   cursor: pointer;
   font-family: 'Rubik', sans-serif;
-}
-
-.form-toggle .active {
-  background-color: rgb(64, 29, 237);
-  color: white;
-}
-
-  .wallet-info {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-  }
-
-  .bets-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   
-  .balance, .cash, .active-bets-container, .past-bets-container {
-    width: 30%;
-    text-align: center;
-    border-radius: 15px;
+  .form-toggle .active {
+  background-color: rgb(64, 29, 237);
+  color: white;
   }
-
+  
+  .wallet-info {
+  display: flex;
+  justify-content: space-between;
+  }
+  
+  .balance, .pnl, .active-bets-container, .past-bets-container {
+  text-align: center;
+  border-radius: 15px;
+  }
+  
   .my-wallet-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 28px;
   }
-
+  
   .my-wallet-container h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 24px;
-}
-
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
+  }
+  
   .my-wallet-container h3 {
-    font-size: 24px;
-    margin-bottom: 25px;
-    text-align: center;
-    font-family: 'Rubik', sans-serif;
+  font-size: 24px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
   }
-
-  .balance, .cash p {
-    font-size: 24px;
-    font-family: 'Rubik', sans-serif; 
-    color: #0ba522;
-    font-weight: bold;
+  
+  .balance, .pnl p {
+  font-size: 26px;
+  font-family: 'Rubik', sans-serif;
+  color: #0ba522;
+  font-weight: bold;
   }
+  
   .balance h3 {
-    color:black;
+  color:black;
   }
-
+  
   .my-wallet-container table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.my-wallet-container th, td {
-    border: 1px solid rgba(77, 77, 77, 0.242);
-    padding: 10px;
-    text-align: left;
-    font-family: 'Rubik', sans-serif;
-}
-
-  .balance {
-    float: left;
-    width: 220px;
-    height: 220px;
-    background-color: #f1f1f1;
-    box-shadow: 5px 5px 10px #ccc;
-    padding: 20px;
-    margin: 20px;
+  width: 100%;
+  border-collapse: collapse;
   }
-
+  
+  .my-wallet-container th, td {
+  border: 1px solid rgba(77, 77, 77, 0.242);
+  padding: 10px;
+  text-align: left;
+  font-family: 'Rubik', sans-serif;
+  }
+  
+  .balance, .pnl{
+  width: 250px;
+  height: 250px;
+  background-color: #f1f1f1;
+  box-shadow: 5px 5px 10px #ccc;
+  padding: 20px;
+  margin: 20px;
+  }
+  
   .active-bets-container, .past-bets-container {
-    border-radius: 25px;
-    box-shadow: 5px 5px 10px #ccc;
-    padding: 30px;
-    padding-bottom: 30px;
-    margin: 15px;
-    margin-bottom: 30px;
-    background-color: rgba(174, 174, 174, 0.18);
-    color:black;
-    font-size: 16px;
-}
-
-.bet-name {
-  width: 80%;
-}
-  .button-stack {
-    padding-top: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+  width: 250px;
+  height: 275px;
+  box-shadow: 5px 5px 10px #ccc;
+  padding: 20px;
+  margin: 20px;
+  color:black;
+  font-size: 16px;
   }
-
+  
+  .bet-name {
+  width: 80%;
+  }
+  
+  .button-stack {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  }
+  
   .balance button {
     border-radius: 15px;
     font-family: 'Rubik', sans-serif;
@@ -246,18 +235,59 @@ button[type="submit"]:hover {
     cursor: pointer;
     margin-top: 10px;
     padding: 8px 8px 8px 8px;
-  }
-  .balance button:hover {
+    }
+    
+    .balance button:hover {
     background-color: #b730fa;
-  }
-  
-  .cash {
-    float: left;
-    width: 220px;
-    height: 220px;
-    background-color: #f1f1f1;
+    }
+    
+
+    
+    .active-bets-container, .past-bets-container {
+    border-radius: 25px;
     box-shadow: 5px 5px 10px #ccc;
-    padding: 20px;
-    margin: 20px;
-  }
+    padding: 30px;
+    padding-bottom: 30px;
+    margin: 15px;
+    margin-bottom: 30px;
+    background-color: rgba(174, 174, 174, 0.18);
+    color:black;
+    font-size: 16px;
+    }
+    
+    .bet-name {
+    width: 80%;
+    }
+    
+    .button-stack {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    }
+    
+    .wallet-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 0px;
+    }
+    
+    .balance {
+    grid-area: 1 / 1 / 2 / 2;
+    }
+    
+    .pnl {
+    grid-area: 1 / 2 / 2 / 3;
+    }
+    
+    .active-bets-container {
+    grid-area: 2 / 1 / 3 / 2;
+    }
+    
+    .past-bets-container {
+    grid-area: 2 / 2 / 3 / 3;
+    }
   

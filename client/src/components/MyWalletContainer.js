@@ -6,7 +6,7 @@ function MyWalletContainer() {
   const [activeBets, setActiveBets] = useState([    { id: 1, bet: "Emmy's 2023", profitLoss: "+50" },    { id: 2, bet: "Super Bowl 2022", profitLoss: "-20" },    { id: 3, bet: "Grammy's 2023", profitLoss: "+40" },  ]);
   const [pastBets, setPastBets] = useState([    { id: 4, bet: "Golden Globes 2023", profitLoss: "+75" },    { id: 5, bet: "Taylor Swift", profitLoss: "-5" },    { id: 6, bet: "Barack Obama", profitLoss: "+30" },  ]);
   const [balance, setBalance] = useState(1000);
-  const [cash, setCash] = useState(500);
+  const [profitloss, setProfitLoss] = useState(275);
   const [karma, setKarma] = useState(250);
   const [name, setName] = useState('John Doe');
 
@@ -18,7 +18,7 @@ function MyWalletContainer() {
       <h1>Welcome <span className="purple-name">{name}</span> &#129412;</h1>
       <div className="karma-box">
         <p className="karma-balance">
-        &#128293;	{karma} Karma
+        &#128293;	{karma} karma
         </p>
       </div>
       {/* Show the modal only if showModal is true */}
@@ -75,13 +75,10 @@ function MyWalletContainer() {
             <button onClick={() => setBalance(balance - 100)}>Withdraw</button>
           </div>
         </div>
-        <div className="cash">
-          <h3>Betting Power</h3>
-          <p className="dollars">{cash}</p>
+        <div className="pnl">
+          <h3>Total Profit / Loss</h3>
+          <p className="dollars">+{profitloss}</p>
         </div>
-      </div>
-      <div className="bets-section">
-        <div className="my-bets-table-wrapper">
           <div className="active-bets-container">
             <h3>Active Bets</h3>
             <table>
@@ -121,7 +118,6 @@ function MyWalletContainer() {
             </table>
           </div> 
         </div>
-      </div>
     </div>
   );
 }
