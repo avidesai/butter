@@ -1,4 +1,3 @@
-import './MyBets.css';
 import React, { useState } from 'react';
 
 import HomePage from './HomePage';

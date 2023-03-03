@@ -1,6 +1,4 @@
-import './MyWallet.css';
 import React, { useState } from 'react';
-
 import HomePage from './HomePage';
 import Navbar from './Navbar';
 import UserPage from './UserPage';
@@ -9,9 +7,6 @@ import MyWalletContainer from './MyWalletContainer.js';
 
 
 function MyWallet() {
-  const [balance, setBalance] = useState(1000); // example starting balance
-  const [cash, setCash] = useState(500); // example starting cash
-  const [bettingPower, setBettingPower] = useState(1500); // example starting betting power
   const [isHomePage, setIsHomePage] = useState(false);
   const [isUserPage, setIsUserPage] = useState(false);
   const [isBetsPage, setIsBetsPage] = useState(false);
