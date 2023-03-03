@@ -9,7 +9,6 @@ function App() {
       <Helmet>
         <title>butter.</title>
         <meta name="description" content="Bet on the world." />
-        <link rel="icon" href="butter.png" />
       </Helmet>
       <HomePage />
     </div>

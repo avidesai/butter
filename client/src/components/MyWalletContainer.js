@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import './MyWalletContainer.css';
 
 function MyWalletContainer() {
@@ -11,61 +10,8 @@ function MyWalletContainer() {
   const [karma, setKarma] = useState(250);
   const [name, setName] = useState('John Doe');
 
-  useEffect(() => {
-    fetch('/api')
-      .then(response => response.json())
-      .then(data => {
-        // Set the values from the API response
-        setBalance(data.balance);
-        setCash(data.cash);
-        setName(data.name);
-        setKarma(data.karma);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
-
   const toggleModal = () => setShowModal(!showModal);
   const [formType, setFormType] = React.useState("Login");
-
-  const createAccount = (event) => {
-    event.preventDefault();
-    const firstName = event.target.elements.firstName.value;
-    const lastName = event.target.elements.lastName.value;
-    const email = event.target.elements.email.value;
-    const password = event.target.elements.password.value;
-  
-    // Set default values for balance, betting_power, karma, active_bets, and past_bets
-    const balance = 500;
-    const bettingPower = 500;
-    const karma = 50;
-    const activeBets = "";
-    const pastBets = "";
-  
-    // Send a POST request to the API to create a new account
-    axios.post("/api/createUserAccount", {
-      firstName,
-      lastName,
-      email,
-      password,
-      balance,
-      bettingPower,
-      karma,
-      activeBets,
-      pastBets
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  
-    // Hide the modal
-    toggleModal();
-  }
-  
 
   return (
     <div className="my-wallet-container">
@@ -106,7 +52,7 @@ function MyWalletContainer() {
                </button>
              </form>
            ) : (
-            <form onSubmit={createAccount}>
+            <form onSubmit={toggleModal}>
               <input type="text" placeholder="First Name" name="firstName" />
               <input type="text" placeholder="Last Name" name="lastName" />
               <input type="email" placeholder="Email" name="email" />

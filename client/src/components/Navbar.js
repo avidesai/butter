@@ -15,12 +15,6 @@ function Navbar({setIsBetsPage, setIsWalletPage, setIsUserPage, setIsHomePage}) 
     setIsWalletPage(true);
     setIsUserPage(false);
   }
-  const handleUser = () => {
-    setIsBetsPage(false);
-    setIsHomePage(false);
-    setIsWalletPage(false);
-    setIsUserPage(true);
-  }
   const handleHomeClick = () => {
     setIsHomePage(true);
     setIsBetsPage(false);

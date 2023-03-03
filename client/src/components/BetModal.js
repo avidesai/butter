@@ -3,7 +3,7 @@ import './BetModal.css';
 
 const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
   const { title, price, choices } = data;
-   const [selectedOption, setSelectedOption] = useState();
+  const [selectedOption, setSelectedOption] = useState();
   const [betAmount, setBetAmount] = useState('');
   const isOptionSelected = selectedOption !== undefined;
 
@@ -43,7 +43,7 @@ const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
           <h4>{Number(price).toLocaleString(undefined, { maximumFractionDigits: 0, minimumFractionDigits: 0 })}</h4>
           {choices && choices.length > 0 && (
             <div className="choice-container">
-              {JSON.parse(choices).map((choice, index) => (
+              {choices.map((choice, index) => (
                 <div key={index} className="choice-selection">
                   <input
                     type="radio"
@@ -77,4 +77,3 @@ const BetModal = ({ isOpen, closeModal, handleBetAmount, data }) => {
 };
 
 export default BetModal;
-

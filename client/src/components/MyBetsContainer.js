@@ -1,6 +1,6 @@
 import './MyBetsContainer.css';
 import SocialFeed from './SocialFeed';
-import React, { useState } from 'react';
+import React from 'react';
 
 const MyBetsContainer = () => {
     const leaderboard = [  { id: 1, playerName: "Bear 🐻", dateStarted: "01/22", totalBetsMade: 15, monthlyProfitLoss: "27,890" },  { id: 2, playerName: "Fox 🦊", dateStarted: "09/21", totalBetsMade: 10, monthlyProfitLoss: "17,345" },  { id: 3, playerName: "Dog 🐶", dateStarted: "04/20", totalBetsMade: 8, monthlyProfitLoss: "14,525" },  { id: 4, playerName: "Cat 🐱", dateStarted: "11/19", totalBetsMade: 5, monthlyProfitLoss: "9,955" },  { id: 5, playerName: "Parrot 🦜", dateStarted: "05/19", totalBetsMade: 3, monthlyProfitLoss: "8,435" }];

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getDatabase, ref, onValue } from "firebase/database";
 import moment from 'moment';
 
 import './BettingGrid.css';
@@ -25,49 +26,12 @@ const BettingGrid = () => {
   };
 
   useEffect(() => {
-    const fetchBetOptions = async () => {
-      try {
-        const response = await fetch('/api/getBetOptions');
-        const data = await response.json();
-        setBetOptions(data);
-      } catch (error) {
-        console.error(error);
-        setBetOptions([
-          {
-            title: "Emmy's Best Comedy Series 🎭",
-            price: 22342,
-            choices: ["Barry", "Ted Lasso", "Curb Your Enthusiasm", "Schitt's Creek"]
-          },
-          {
-            title: "Best Album of 2022 🎶",
-            price: 9527,
-            choices: ["Renaissance by Beyoncé", "Ramona Park Broke My Heart by Vince Staples", "Un Verano Sin Ti by Bad Bunny", "The Slow Rush by Tame Impala"]
-          },
-          {
-            title: "Is Leonardo DiCaprio's Relationship Acceptable? 🔥",
-            price: 127833,
-            choices: ["Yes", "No"]
-          },
-          {
-            title: "Will Trump Get Impeached? 🍑",
-            price: 2391,
-            choices: ["Yes", "No"]
-          },
-          {
-            title: "Is COVID-19 a man made virus? 🦠",
-            price: 19935,
-            choices: ["Yes", "No"]
-          },
-          {
-            title: "Best Movie to Watch on a Rainy Day ☔",
-            price: 1234,
-            choices: ["The Breakfast Club", "Ferris Bueller's Day Off", "Forrest Gump", "The Shawshank Redemption"]
-          },
-        ]);
-      }
-    };
+    const dbRef = ref(getDatabase(), 'live-bets');
 
-    fetchBetOptions();
+    onValue(dbRef, (snapshot) => {
+      const data = snapshot.val();
+      setBetOptions(data);
+    });
 
     const interval = setInterval(() => {
       setTimeLeft(moment().startOf('day').seconds(9000).subtract(1, 'seconds').format('H:mm'));
