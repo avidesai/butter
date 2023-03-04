@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getDatabase, ref, set } from "firebase/database";
 import './MyWalletContainer.css';
 
 function MyWalletContainer() {
@@ -12,6 +14,35 @@ function MyWalletContainer() {
 
   const toggleModal = () => setShowModal(!showModal);
   const [formType, setFormType] = React.useState("Login");
+
+  const handleCreateAccount = (event) => {
+    event.preventDefault();
+    const auth = getAuth();
+    const db = getDatabase();
+    const firstName = event.target.firstName.value;
+    const lastName = event.target.lastName.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        set(ref(db, `user-accounts/${user.uid}`), {
+          firstName: firstName,
+          lastName: lastName,
+          email: email
+        }).then(() => {
+          console.log("User account created successfully");
+        }).catch((error) => {
+          console.log("Error creating user account: ", error);
+        });
+      })
+      .catch((error) => {
+        console.log("Error creating user account: ", error);
+      });
+
+    toggleModal();
+  };
 
   return (
     <div className="my-wallet-container">
@@ -52,15 +83,13 @@ function MyWalletContainer() {
                </button>
              </form>
            ) : (
-            <form onSubmit={toggleModal}>
+            <form onSubmit={handleCreateAccount}>
               <input type="text" placeholder="First Name" name="firstName" />
               <input type="text" placeholder="Last Name" name="lastName" />
               <input type="email" placeholder="Email" name="email" />
               <input type="password" placeholder="Password" name="password" />
               <input type="password" placeholder="Confirm Password" name="confirmPassword" />
-              <button type="submit">
-                Submit
-              </button>
+              <button type="submit">Submit</button>
             </form>
            )}
          </div>
