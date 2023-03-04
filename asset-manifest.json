@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/butter/static/css/main.54b3e267.css",
-    "main.js": "/butter/static/js/main.63b0d29a.js",
+    "main.css": "/butter/static/css/main.c115f288.css",
+    "main.js": "/butter/static/js/main.302abc29.js",
     "static/media/clock.png": "/butter/static/media/clock.934beee769403dd2d4f2.png",
     "index.html": "/butter/index.html",
-    "main.54b3e267.css.map": "/butter/static/css/main.54b3e267.css.map",
-    "main.63b0d29a.js.map": "/butter/static/js/main.63b0d29a.js.map"
+    "main.c115f288.css.map": "/butter/static/css/main.c115f288.css.map",
+    "main.302abc29.js.map": "/butter/static/js/main.302abc29.js.map"
   },
   "entrypoints": [
-    "static/css/main.54b3e267.css",
-    "static/js/main.63b0d29a.js"
+    "static/css/main.c115f288.css",
+    "static/js/main.302abc29.js"
   ]
 }
