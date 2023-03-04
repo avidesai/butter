@@ -50,24 +50,23 @@
     background-color: white;
     text-shadow: none;
   }
-  .tile-timer img{
-    width: 25px;
-    height: 25px;
+  .tile-timer .emoji{
+    font-size: 18px;
   }
   
   .tile-timer p {
     font-family: 'Rubik', sans-serif; 
     margin-left: 5px;
     margin-right: 5px;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: bold;
     margin-top: 0px;
     margin-bottom: 0px;
-    color:black;
-    
+    color: rgb(0, 0, 0);
   }
 
   .tile h3 {
-    margin-top: 50px;
+    margin-top: 60px;
     grid-area: title;
     font-size: 20px;
     font-family: 'Rubik', sans-serif;

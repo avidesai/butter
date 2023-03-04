@@ -1,28 +1,82 @@
-[  {    "title": "Emmy's Best Comedy Series 🎭",    "price": 22342,    "choices": ["Barry", "Ted Lasso", "Curb Your Enthusiasm", "Schitt's Creek"]
-  },
-  {
-    "title": "Best Album of 2022 🎶",
-    "price": 9527,
-    "choices": ["Renaissance by Beyoncé", "Ramona Park Broke My Heart by Vince Staples", "Un Verano Sin Ti by Bad Bunny", "The Slow Rush by Tame Impala"]
-  },
-  {
-    "title": "Is Leonardo DiCaprio's Relationship Acceptable? 🔥",
-    "price": 127833,
-    "choices": ["Yes", "No"]
-  },
-  {
-    "title": "Will Trump Get Impeached? 🍑",
-    "price": 2391,
-    "choices": ["Yes", "No"]
-  },
-  {
-    "title": "Is COVID-19 a man made virus? 🦠",
-    "price": 19935,
-    "choices": ["Yes", "No"]
-  },
-  {
-    "title": "Best Movie to Watch on a Rainy Day ☔",
-    "price": 1234,
-    "choices": ["The Breakfast Club", "Ferris Bueller's Day Off", "Forrest Gump", "The Shawshank Redemption"]
-  }
-]
+{
+  "live-bets": [
+    {
+      "choices": [
+        "Barry",
+        "Ted Lasso",
+        "Curb Your Enthusiasm",
+        "Schitt's Creek"
+      ],
+      "price": 22342,
+      "title": "Emmy's Best Comedy Series",
+      "start-time": "2022-03-03T09:00:00.000Z",
+      "end-time": "2023-03-06T14:30:00.000Z",
+      "bet-type": "objective",
+      "emoji": "&#127917;"
+    },
+    {
+      "choices": [
+        "Renaissance by Beyoncé",
+        "Ramona Park Broke My Heart by Vince Staples",
+        "Un Verano Sin Ti by Bad Bunny",
+        "The Slow Rush by Tame Impala"
+      ],
+      "price": 9527,
+      "title": "Best Album of 2022",
+      "start-time": "2022-03-03T09:00:00.000Z",
+      "end-time": "2023-03-10T08:45:00.000Z",
+      "bet-type": "subjective",
+      "emoji": "&#127925;"
+    },
+    {
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "price": 127833,
+      "title": "Did Russell Westbrook Fall Off?",
+      "start-time": "2022-03-03T09:00:00.000Z",
+      "end-time": "2023-03-08T18:15:00.000Z",
+      "bet-type": "subjective",
+      "emoji": "&#127936;"
+    },
+    {
+      "choices": [
+        "Innocent",
+        "Guilty"
+      ],
+      "price": 2391,
+      "title": "Do You Think Andrew Tate is Guilty or Innocent?",
+      "start-time": "2022-03-03T09:00:00.000Z",
+      "end-time": "2023-03-07T10:00:00.000Z",
+      "bet-type": "subjective",
+      "emoji": "&#10067;"
+    },
+    {
+      "choices": [
+        "Yes",
+        "No"
+      ],
+      "price": 19935,
+      "title": "Was Covid-19 Created In a Lab?",
+      "start-time": "2022-03-03T09:00:00.000Z",
+      "end-time": "2023-03-05T15:45:00.000Z",
+      "bet-type": "subjective",
+      "emoji": "&#129440;"
+    },
+    {
+      "choices": [
+        "The Breakfast Club",
+        "Ferris Bueller's Day Off",
+        "Forrest Gump",
+        "The Shawshank Redemption"
+      ],
+      "price": 1728,
+      "title": "Best Movie to Watch on a Rainy Day",
+      "start-time": "2022-03-03T09:00:00.000Z",
+      "end-time": "2023-03-09T11:30:00.000Z",
+      "bet-type": "subjective",
+      "emoji": "&#127871;"
+    }
+  ]
+}
