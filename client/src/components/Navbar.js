@@ -24,8 +24,11 @@ function Navbar({setIsBetsPage, setIsWalletPage, setIsUserPage, setIsHomePage}) 
 
   return (
     <nav className="floating-navbar">
-        <div className="navbar-left">
-          <button onClick={handleHomeClick}>butter.</button>
+        <div className="navbar-left"> 
+          <button onClick={handleHomeClick}>
+            <img src="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f9c7.png" alt="butter" />
+            butter.
+          </button>
         </div>
         <div className="navbar-right">
             <div className="navbar-buttons">
