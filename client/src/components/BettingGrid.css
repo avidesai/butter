@@ -51,14 +51,14 @@
     text-shadow: none;
   }
   .tile-timer .emoji{
-    font-size: 18px;
+    font-size: 20px;
   }
   
   .tile-timer p {
     font-family: 'Rubik', sans-serif; 
     margin-left: 5px;
     margin-right: 5px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     margin-top: 0px;
     margin-bottom: 0px;

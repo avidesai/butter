@@ -1,19 +1,45 @@
 import React, { useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getDatabase, ref, set, get } from "firebase/database";
 import './MyWalletContainer.css';
 
 function MyWalletContainer() {
   const [showModal, setShowModal] = useState(true);
-  const [activeBets, setActiveBets] = useState([    { id: 1, bet: "Emmy's 2023", profitLoss: "+50" },    { id: 2, bet: "Super Bowl 2022", profitLoss: "-20" },    { id: 3, bet: "Grammy's 2023", profitLoss: "+40" },  ]);
-  const [pastBets, setPastBets] = useState([    { id: 4, bet: "Golden Globes 2023", profitLoss: "+75" },    { id: 5, bet: "Taylor Swift", profitLoss: "-5" },    { id: 6, bet: "Barack Obama", profitLoss: "+30" },  ]);
-  const [balance, setBalance] = useState(1000);
-  const [profitloss, setProfitLoss] = useState(275);
-  const [karma, setKarma] = useState(250);
-  const [name, setName] = useState('John Doe');
+  const [activeBets, setActiveBets] = useState([{ id: 1, bet: "No active bets", profitLoss: "-" }]);
+  const [pastBets, setPastBets] = useState([{ id: 1, bet: "No past bets", profitLoss: "-" }]);
+  const [balance, setBalance] = useState(0);
+  const [profitloss, setProfitLoss] = useState(0);
+  const [karma, setKarma] = useState(0);
+  const [name, setName] = useState('');
 
   const toggleModal = () => setShowModal(!showModal);
   const [formType, setFormType] = React.useState("Login");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const auth = getAuth();
+    const db = getDatabase();
+    const email = e.target.elements.email.value;
+    const password = e.target.elements.password.value;
+  
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        get(ref(db, `user-accounts/${user.uid}`)).then((snapshot) => {
+          const data = snapshot.val();
+          setName(`${data.firstName} ${data.lastName}`);
+          setKarma(data.karma);
+          setBalance(data.balance);
+          setProfitLoss(data.profitLoss);
+          setActiveBets(data.activeBets);
+          setPastBets(data.pastBets);
+          // Set website state to "logged in"
+          toggleModal();
+        });
+      }).catch((error) => {
+        console.log("Error logging in: ", error);
+      });
+  };  
 
   const handleCreateAccount = (event) => {
     event.preventDefault();
@@ -23,26 +49,40 @@ function MyWalletContainer() {
     const lastName = event.target.lastName.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    
+    const confirmPassword = event.target.confirmPassword.value;
+
+    if (password !== confirmPassword) {
+      const errorMessage = document.createElement('span');
+      errorMessage.textContent = 'Passwords do not match';
+      errorMessage.style.color = 'red';
+      const confirmInput = event.target.confirmPassword;
+      confirmInput.parentNode.insertBefore(errorMessage, confirmInput.nextSibling);
+      return;
+    }
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         set(ref(db, `user-accounts/${user.uid}`), {
           firstName: firstName,
           lastName: lastName,
-          email: email
+          email: email,
+          password: password,
+          karma: 0,
+          balance: 500,
+          profitLoss: 0,
+          activeBets: [{ id: 1, bet: "No active bets", profitLoss: "" }],
+          pastBets: [{ id: 1, bet: "No past bets", profitLoss: "" }]
         }).then(() => {
           console.log("User account created successfully");
         }).catch((error) => {
           console.log("Error creating user account: ", error);
         });
       })
-      .catch((error) => {
-        console.log("Error creating user account: ", error);
-      });
-
     toggleModal();
   };
+
+  
 
   return (
     <div className="my-wallet-container">
@@ -75,12 +115,10 @@ function MyWalletContainer() {
            </div>
            {/* form for login/create account */}
            {formType === "Login" ? (
-             <form>
-               <input type="email" placeholder="Email" />
-               <input type="password" placeholder="Password" />
-               <button type="submit" onClick={toggleModal}>
-                 Submit
-               </button>
+             <form onSubmit={handleLogin}>
+               <input type="email" placeholder="Email" name="email" />
+               <input type="password" placeholder="Password" name="password" />
+               <button type="submit">Submit</button>
              </form>
            ) : (
             <form onSubmit={handleCreateAccount}>
@@ -106,7 +144,7 @@ function MyWalletContainer() {
         </div>
         <div className="pnl">
           <h3>Total Profit / Loss</h3>
-          <p className="dollars">+{profitloss}</p>
+          <p className="dollars">{profitloss}</p>
         </div>
           <div className="active-bets-container">
             <h3>Active Bets</h3>

@@ -53,7 +53,6 @@ const BettingGrid = () => {
             else {
               formattedTimeLeft = `${hoursLeft} hours`;
             }
-           
           }
           return {
             ...option,

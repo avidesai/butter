@@ -73,7 +73,7 @@
 .modal h2 {
   padding-top: 35px;
   font-family: 'Rubik', sans-serif;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .purple-name {
@@ -101,7 +101,7 @@
 .modal-wrapper button[type="submit"] {
   font-family: 'Rubik', sans-serif;
   width: 100px;
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 15px;
   background-color: rgb(64, 29, 237);
   color: white;
@@ -118,7 +118,7 @@ button[type="submit"]:hover {
 .form-toggle {
   display: flex;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .form-toggle button {
