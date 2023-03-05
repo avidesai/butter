@@ -50,7 +50,7 @@ function MyWalletContainer() {
     const email = event.target.email.value;
     const password = event.target.password.value;
     const confirmPassword = event.target.confirmPassword.value;
-
+  
     if (password !== confirmPassword) {
       const errorMessage = document.createElement('span');
       errorMessage.textContent = 'Passwords do not match';
@@ -59,7 +59,7 @@ function MyWalletContainer() {
       confirmInput.parentNode.insertBefore(errorMessage, confirmInput.nextSibling);
       return;
     }
-
+  
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -71,17 +71,18 @@ function MyWalletContainer() {
           karma: 0,
           balance: 500,
           profitLoss: 0,
-          activeBets: [{ id: 1, bet: "No active bets", profitLoss: "" }],
-          pastBets: [{ id: 1, bet: "No past bets", profitLoss: "" }]
+          activeBets: [{ id: 1, bet: "No active bets", profitLoss: "-" }],
+          pastBets: [{ id: 1, bet: "No past bets", profitLoss: "-" }]
         }).then(() => {
           console.log("User account created successfully");
+          setFormType("Login");
+          event.target.reset(); // Clear form fields
         }).catch((error) => {
           console.log("Error creating user account: ", error);
         });
-      })
-    toggleModal();
+      });
   };
-
+  
   
 
   return (
