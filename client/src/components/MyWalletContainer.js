@@ -11,6 +11,8 @@ function MyWalletContainer() {
   const [profitloss, setProfitLoss] = useState(0);
   const [karma, setKarma] = useState(0);
   const [name, setName] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
 
   const toggleModal = () => setShowModal(!showModal);
   const [formType, setFormType] = React.useState("Login");
@@ -52,11 +54,7 @@ function MyWalletContainer() {
     const confirmPassword = event.target.confirmPassword.value;
   
     if (password !== confirmPassword) {
-      const errorMessage = document.createElement('span');
-      errorMessage.textContent = 'Passwords do not match';
-      errorMessage.style.color = 'red';
-      const confirmInput = event.target.confirmPassword;
-      confirmInput.parentNode.insertBefore(errorMessage, confirmInput.nextSibling);
+      setErrorMessage('Passwords do not match');
       return;
     }
   
@@ -76,14 +74,13 @@ function MyWalletContainer() {
         }).then(() => {
           console.log("User account created successfully");
           setFormType("Login");
+          setErrorMessage(''); // reset error message
           event.target.reset(); // Clear form fields
         }).catch((error) => {
           console.log("Error creating user account: ", error);
         });
       });
   };
-  
-  
 
   return (
     <div className="my-wallet-container">
@@ -128,6 +125,7 @@ function MyWalletContainer() {
               <input type="email" placeholder="Email" name="email" />
               <input type="password" placeholder="Password" name="password" />
               <input type="password" placeholder="Confirm Password" name="confirmPassword" />
+              {errorMessage && <p style={{ color: 'red'}}>{errorMessage}</p>}
               <button type="submit">Submit</button>
             </form>
            )}
